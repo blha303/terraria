@@ -20,7 +20,7 @@ def find(search, place="items"):
     data = get()
     if place in data:
         if search in data[place]:
-            return data[place][search]
+            return {search: data[place][search]}
         else:
             return find(difflib.get_close_matches(search, data[place], 1)[0], place)
     else:
