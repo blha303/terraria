@@ -10,10 +10,12 @@ prefixes = {"Large": "1", "Massive": "2", "Dangerous": "3", "Savage": "4", "Shar
 
 
 def get():
+    """ Returns dict containing all dicts in this package """
     return {"items": items, "npcs": npcs, "buffs": buffs, "projectiles": projectiles, "tiles": tiles, "walls": walls}
 
 
-def find(search, place):
+def find(search, place="items"):
+    """ Searches in data dicts for specified item/tile/npc/buff/etc """
     search = search.title()
     data = get()
     if place in data:
