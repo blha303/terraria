@@ -22,6 +22,6 @@ def find(search, place="items"):
         if search in data[place]:
             return data[place][search]
         else:
-            return difflib.get_close_matches(search, data[place])
+            return find(difflib.get_close_matches(search, data[place], 1)[0], place)
     else:
         return find(search, difflib.get_close_matches(place, data, 1)[0])
